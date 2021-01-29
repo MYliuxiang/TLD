@@ -1,0 +1,105 @@
+/* 公共样式设计 */
+.gas-flex{display:flex}
+.gas-flex_item{flex:1}
+.c-right{text-align:right}
+.c-pad-left{padding-left:10px}
+/* END */
+/* tab样式设计 */
+.tab-default{color:#ababab}
+.tab-on{color:#d50100}
+.nav-pic{width:100%;height:120px;background-color: white;margin-top: 30px;}
+.oil-msg{width:100%;height:20px;background:white;}
+/* 首页样式设计 */
+.flex{display:flex}
+.flex-item{flex:1}
+.oil-gray{color:gray}
+.oil-middle{vertical-align: middle;}
+.oil-img{width:15px;height:15px}
+.img-mid{vertical-align: middle;padding-left:10px;}
+.header-menu1{width:100%;height:30px;background-color:white;display:flex}
+.header-menu1>div>div{width:96%;height:26px;margin:2px auto;border-radius:5px;background-color: #eee;}
+#oil-search{width:20px;height:20px;vertical-align: middle;padding-left: 10px;}
+.oil-discount{width: 150px;height:15px;background-color:#fde9dc;color:#f8a97c;font-size: 12px;line-height: 15px;margin-top: 5px;}
+.oil-data-item{width:96%;height:165px;background:white;margin:0 auto;border-bottom: 1px solid #eee;}
+.oil-home-filter{text-align: center;background-color:white;height: 40px;justify-content: space-between;}
+.oil-home-msg{position: fixed;top:0px;left:0px;height:180px}
+.exit-gas{width:25px;padding-right:10px;height:25px;padding-top:3px}
+.oil-filter-group{display:inline-block;width:80px;height:20px;text-align:center;border-radius:10px;background-color: #eee;}
+#filter-page{position:fixed;width: 100%;height:calc(100vh - 200px);left:0px;top:200px;background-color: black;opacity:0.5;display:none}
+#filter-page-item{position:fixed;width: 100%;left:0px;top:200px;;z-index:222;background-color:white;display: none;}
+/*首页轮播图*/
+/* 首页-加载效果 */
+.load-gas{position: absolute;left:50%;top:50%;display: none;margin-left: -10px;}
+.no-data{width:100%;text-align:center;color:gray}
+/* 首页-详情 */
+.oil-detail{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.oil-menu{
+    font-size: 16px;margin-top: 20px;
+}
+.oil-items{display: flex;flex-wrap: wrap;}
+.oil-items .oil-item{margin-right:15px;width:70px;height:25px;border:1px solid #ababab;border-radius:5px;line-height:25px;text-align:center;font-size:14px;font-weight:bold;margin-top:10px}
+.oil-cash-num{border:1px solid #ababab;display:inline-block;width:60%;border-radius:5px;font-size:14px;height:25px}
+.oil-item-cash{margin-right:15px;width:60px;height:25px;border:1px solid #ababab;border-radius:5px;line-height:25px;text-align:center;font-size:14px;font-weight:bold;margin-top:10px}
+.oil-flex{display: flex;height:30px;;line-height: 30px;}
+.oil-flex-item{flex:1;}
+.oil-imgs{width:20px;height:20px}
+.oil-pay-text{font-size:14px}
+.oil-pay-radio{text-align: right;margin-right: 20px;}
+.pay-icon{color:#d50100}
+.oil-btn{background-color:#d50100;width:150px;border-radius:5px;}
+/* 首页加载图标 */
+.load-gas{position: absolute;left:50%;top:50%;display: none;margin-left: -10px;}
+/* 首页-支付 */
+.header-menu{width:96%;height:16px;margin-top:10px;margin-left:3%;border-left: 3px solid #d50100;line-height: 16px;font-size: 16px;font-weight: bold;}
+.oil-pay-details{width:96%;margin:10px auto;height:180px;border-radius:5px;border:1px solid #eee}
+.oil-pay-content{display: flex;text-indent: 10px;margin-top:10px}
+.oil-pay-title{flex:1;color:#ababab}
+.oil-pay-data{flex:1;text-align:right;margin-right:10px;font-weight: bold;}
+.pay-total{width:200px;height:100px;margin: 60px auto;text-align: center;}
+.oil-sure-btn{background-color:#d50100;margin-top:10px;height:30px;width:120px;font-size: 14px;line-height: 10px;border-radius:5px;}
+
+/* 首页-加油记录轮播 */
+marquee{
+    text-align:left;
+    background:#fff;
+    font-size:12px;
+    width:260px;
+    height:12px
+}
+/* END */
+/* 订单 */
+.oil-order-data{margin-top:120px}
+.oil-filter{width:100%;height:70px;background-color:#eee;font-size:14px;color:gray;}
+.oil-filter-select{text-align:left;margin:10px 0px 0px -15px;font-size:16px;width:100px;height:30px;line-height:30px;display: inline-block;color:black}
+.oil-data-order{width:90%;background-color:white;height:85px;margin:0 auto;border-bottom: 1px solid #eee;}
+.oil-data-order .place{font-weight: bold;height:20px;margin:5px 0px;font-size:16px;padding-top:10px}
+.oil-data-order_cash{width:100px;text-align: right;padding-right: 20px;}
+.oil-pay-group{border:none;border-top: 1px solid #eee;height:240px}
+
+
+/* 我的 */
+.oil-mine-msg{position: absolute; top:2px; left:30px;color:white}
+.s-oil-mine-head{width:75px;height:75px;margin:auto}
+
+.oil-phone{width:80px;height:15px;text-align:center;line-height:15px;margin:5px auto;color:white}
+.oil-gasnum{width:86px;height:15px;border-radius: 20px;text-align:center;line-height:15px;margin:0 auto;position: relative;}
+.oil-gasnum-mask{background-color: white;opacity:0.2;width:100%;height:100%;border-radius: 20px;position: absolute;top:0px;left:0px;}
+.oil-order-menu{width:94%;height:170px;margin:10px auto;border-radius:15px;border:1px solid #eee;text-indent:5px}
+.oil-menu-img{width:30px;height:30px;padding-right:20px}
+.oil-menu-cas{color:red;transform:scale(0.8);margin-left:-12px}
+.promlem-item{width:100%;height:30px;line-height: 30px;border-bottom:1px solid #eee;color:gray;font-size:14px}
+.problem-img{vertical-align:middle;padding-right:10px;}
+.toggle-problem{height:60px;padding-left: 10px;font-size:14px;display:none}
+/*  我的-车辆认证*/
+.certify-body{width:90%;height:22px;margin:0 auto;line-height:22px;margin-bottom: 20px;}
+.certify-input-item{width:100%;height:100%;border-radius:5px;border:1px solid gray}
+.certify-input-label{width:80px}
+.confirm-certify{left:50%;width:80px;margin-left:-40px;margin-top:30px;background-color:#d50100;font-size:12px;}
+.mine-input-style{border:1px solid #eee;display:inline-block;width:200px;height:20px;border-radius:5px}
+/* 我的-帮助中心 */
+.c-help-more{width:94%;text-align: right;margin:10px auto;font-size:16px;padding-right:10px}
+/* 我的-邀请 */
+.s-visit-btn{background-color: #d50100;border-radius:10px;font-size:12px;margin:5px 10px 3px 3px}

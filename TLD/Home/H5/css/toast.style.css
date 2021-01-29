@@ -1,0 +1,19 @@
+@charset "UTF-8";
+.toast-item-wrapper {
+  min-width: 250px;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #fff;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .toast-item-wrapper.success {
+    text-align: center;
+    background-color: gray;
+    border: 1px solid gray;
+    opacity:.8}
+  .toast-item-wrapper.toast-bottom-right {
+    right: 20px;
+    bottom: 20px; }

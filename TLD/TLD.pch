@@ -1,0 +1,95 @@
+//
+//  TLD.pch
+//  TLD
+//
+//  Created by liuxiang on 2021/1/20.
+//
+
+#ifndef TLD_pch
+#define TLD_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#define  LxUserDefaults [NSUserDefaults standardUserDefaults]
+
+#define  kScreenHeight [[UIScreen mainScreen] bounds].size.height
+#define  kScreenWidth [[UIScreen mainScreen] bounds].size.width
+
+#define IS_iPhoneX (\
+{\
+BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(isPhoneX);}\
+)
+#define kIs_iphone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define kIs_iPhoneX kScreenWidth >=375.0f && kScreenHeight >=812.0f&& kIs_iphone
+
+#define RCDLocalizedString(key) NSLocalizedStringFromTable(key, @"SealTalk", nil)
+
+
+
+/*状态栏高度*/
+#define Height_StatusBar (CGFloat)(IS_iPhoneX?(44.0):(20.0))
+/*导航栏高度*/
+#define kNavBarHeight (44)
+/*状态栏和导航栏总高度*/
+#define Height_NavBar (CGFloat)(IS_iPhoneX?(88.0):(64.0))
+/*TabBar高度*/
+#define Height_TabBar (CGFloat)(IS_iPhoneX?(49.0 + 34.0):(49.0))
+
+/*顶部安全区域远离高度*/
+#define kTopBarSafeHeight (CGFloat)(IS_iPhoneX?(44.0):(0))
+/*底部安全区域远离高度*/
+#define kBottomSafeHeight (CGFloat)(IS_iPhoneX?(34.0):(0))
+/*iPhoneX的状态栏高度差值*/
+#define kTopBarDifHeight (CGFloat)(IS_iPhoneX?(24.0):(0))
+/*导航条和Tabbar总高度*/
+#define kNavAndTabHeight (kNavBarAndStatusBarHeight + kTabBarHeight)
+
+#define lxWindow [UIApplication sharedApplication].keyWindow
+
+
+#import "LXHeader.h"
+
+
+//第三方
+#import <YYCache/YYCache.h>
+#import <AFNetworking.h>
+#import <TZImagePickerController/TZImagePickerController.h>//图片选择器
+#import <Masonry/Masonry.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
+#import <MJExtension/MJExtension.h>
+#import <AlipaySDK/AlipaySDK.h>
+#import <WechatOpenSDK/WXApi.h>
+#import <WechatOpenSDK/WXApiObject.h>
+
+
+//工具
+#import "MBProgressHUD+Add.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
+#import "TZImgePickHelper.h"
+#import "BANetManager_OC.h"
+#import "WRNavigationBar.h"
+#import "WRCustomNavigationBar.h"
+#import "UIColor+MyColor.h"
+#import "IQKeyboardManager.h"
+
+#import "AppService.h"
+#import "PayHelper.h"
+#import "LXUrl.h"
+
+#define kAppKey_Wechat @"wxce313e8e43351830"
+#define kUniversalLink_Wechat @"https://tld_gyl/app/"
+
+
+#define kScheme_AliPay @"alisdkTLD"
+
+
+
+
+
+
+#endif /* TLD_pch */
