@@ -194,7 +194,7 @@
         //查看电子运输合同
         if ([name isEqualToString:@"ShowContactDocument"]) {
             NSString *url = dic[@"url"];
-            NSString *string = [NSString stringWithFormat:@"%@%@",BaseUrl_IP,url];
+            NSString *string = [NSString stringWithFormat:@"%@",url];
 
             BAFileDataEntity *entity = [BAFileDataEntity new];
             entity.urlString = [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];

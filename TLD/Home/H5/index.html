@@ -2232,7 +2232,12 @@
             <div ></div>
             <div class="weui-cell__ft"></div>
         </div>
-
+        <div class="weui-cell weui-cell_access">
+            <div class="weui-cell__bd">签名查看<sign id='is_signature' style="color:#d50100"></sign></div>
+        </div>
+        <div style="text-align: center;">
+            <img src="images/home/nopic.jpg" style="border:1px dotted #008c00" id='my_signature'>
+        </div>
     </div>
     <div class="weui-skin_android" id="androidActionsheet" style="display: none">
         <div class="weui-mask">
@@ -4379,25 +4384,6 @@
                     })
                 }
         }
-        // 下拉首页刷新
-        // {
-
-        //     let startY,endY
-        //     let home = document.querySelector('#longtap-refresh')
-        //     home.addEventListener('touchstart',function(e){
-        //         startY = e.changedTouches[0].pageY
-        //     },true)
-        //     home.addEventListener('touchmove',function(e){
-        //         endY = e.changedTouches[0].pageY
-        //         let distance = endY - startY
-        //         if(distance >= 150 && current_tab_page == 0){
-        //             $('.load-refresh').show()
-        //             setTimeout(function(){
-        //                 $(location).attr('href', 'index.html?'+new Date().getTime());
-        //             },1000)
-        //         }
-        //     },true)
-        // }
     </script>
     <!--页面刷新 -->
     <script>
@@ -4987,7 +4973,14 @@
                         {
                             $('.scan_code').hide();
                             $('#see-contract').hide();
-                            const info = data.info;
+                            let info = null
+                            if(!data.info){
+                                info = data
+                            }else{
+                                info = data.info
+                            }
+                            data.name = !data.name ? data.user : data.name
+                            data.phone = !data.phone ? data.user : data.phone
                             $('#data_goodsowner-name').html(data.name);
                             $('#points_goods').html(data.fraction + '分')
                             $('#data_goodsowner-phone').html(info.phone);
@@ -5001,16 +4994,30 @@
                             // //个人信息渲染
                             $('#data_info-name').html(data.name);
                             $('#data_info-phone').html(info.phone);
+                            if(data.signature){
+                                $('#is_signature').html('<span style="color:#008c00">(已签名)</span>')
+                                $("#my_signature").attr("src",getFileLink(info.signature));
+                            }else{
+                                $('#is_signature').html('(暂未签名)')
+                            }
                         }
                         break
                     case 'cars_myinfo':
                         {
+                            console.log(data)
                             let store = JSON.parse(j2aCls.GetToken())
                             store.star = data.points
                             j2aCls.SetToken(JSON.stringify(store))
                             $('.scan_code').show();
                             $('#see-contract').show();
-                            const info=data.info;
+                            let info = null
+                            if(!data.info){
+                                info = data
+                            }else{
+                                info = data.info
+                            }
+                            data.name = !data.name ? data.user : data.name
+                            data.phone = !data.phone ? data.user : data.phone
                             //司机认证渲染
                             $('#sj_name').val(info.name);
                             $('#sj_phone').val(info.phone);
@@ -5022,6 +5029,12 @@
                             //个人信息渲染
                             $('#data_info-name').html(data.name);
                             $('#data_info-phone').html(info.phone);
+                            if(data.signature){
+                                $('#is_signature').html('<span style="color:#008c00">(已签名)</span>')
+                                $("#my_signature").attr("src",getFileLink(info.signature));
+                            }else{
+                                $('#is_signature').html('(暂未签名)')
+                            }
                         }
                         break
                     case "addSource"://发布货源
@@ -6114,6 +6127,7 @@
                                 $('#deliver-mine-body1').append(ele);
 							}
                         }
+                        total_fee = total_fee.toFixed(2)
                         $('#data_total-fee').html(total_fee);
                          $('#data_total-fee1').html(total_fee);
                          {
@@ -7794,7 +7808,6 @@
                         // $('#goods_bank_bank').val(obj.message.bank)
                         break;
                     default:
-                        console.log(data)
                 }
              }else{
                 //数据返回
@@ -11334,13 +11347,8 @@ $('.oil-back').on('touchend',function(){
                     $('#refrash-content').css({
                         marginTop:190+ 'px'
                     })
-                    //数据更新
+                    //下拉数据更新
                     {
-                        // let obj = paramObj('PL','gas_list')
-                        // obj.ext = 'gas_list'
-                        // obj.count = 2000
-                        // sendMsg(JSON.stringify(obj))
-                        // console.log('下拉刷新了')
                     }
                 },2000)
             }else{
