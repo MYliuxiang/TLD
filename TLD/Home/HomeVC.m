@@ -52,13 +52,13 @@
     self.customNavBar.hidden = YES;
     [self.view addSubview:self.webView];
     
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"/H5"];
-//    NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-//    [self.webView loadHTMLString:content baseURL:[NSURL fileURLWithPath: [NSString stringWithFormat:@"%@/H5/", [[NSBundle mainBundle] bundlePath]]]];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"/H5"];
+    NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    [self.webView loadHTMLString:content baseURL:[NSURL fileURLWithPath: [NSString stringWithFormat:@"%@/H5/", [[NSBundle mainBundle] bundlePath]]]];
 
-    NSURL *url = [NSURL URLWithString:@"https://tld.0838mai.cn/h5/app"];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    [self.webView loadRequest:request];
+//    NSURL *url = [NSURL URLWithString:@"https://tld.0838mai.cn/h5/app"];
+//    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+//    [self.webView loadRequest:request];
     
 
 }
